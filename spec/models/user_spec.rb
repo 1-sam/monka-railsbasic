@@ -15,6 +15,6 @@ RSpec.describe User, type: :model do
     it "is invalid without phone number" do
       user = build(:user, phone_number: nil)
       user.valid?
-      expect(user.errors[:phone_number]).to include("cant' be blank")
+      expect(user.errors[:phone_number]).to include("can't be blank")
     end
 end
