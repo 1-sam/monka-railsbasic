@@ -8,7 +8,7 @@ Bundler.require(*Rails.groups)
 
 module MonkaRailsbasic
   class Application < Rails::Application
-   
+   config.time_zone = 'Tokyo'
     #tsuika Dont'tgenerate system test files
     config.generators.system_tests = nil 
   
