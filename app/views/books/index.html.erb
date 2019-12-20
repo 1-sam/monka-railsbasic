@@ -12,6 +12,7 @@
       <th>Displayed</th>
       <th>CreatedAt</th>
       <th colspan="2"></th>
+      <th>image</th>
     </tr>
   </thead>
 
@@ -26,6 +27,10 @@
         <td><%= book.created_at %></td> <!-- href-->
         <td><%= link_to 'Edit', edit_book_path(book) %></td>
         <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><% if book.image.attached? %>
+          <%=  image_tag book.image %>
+        <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
