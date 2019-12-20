@@ -6,14 +6,16 @@
   <thead>
     <tr>
     <th>id</th>
+    <th>review count</th>
       <th>Title</th>
       <th>Author</th>
       <th>Published on</th>
       <th>Price</th>
       <th>Displayed</th>
       <th>CreatedAt</th>
-      <th colspan="2"></th>
       <th>image</th>
+      <th colspan="2"></th>
+      
     </tr>
   </thead>
 
@@ -21,18 +23,21 @@
     <% @books.each do |book| %>
       <tr>
       <td><%= book.id %></td>
+      <td><%= book.reviews.count %>件</td>
         <td><%= book.title %></td>
         <td><%= book.author %></td>
-        <td><%= book.published_on %></td>
-        <td><%= book.price %></td>
+        <td><%= format_datetime book.published_on %></td>
+        <td><%= book.price %>¥(税込)</td>
         <td><%= book.displayed %></td>
-        <td><%= book.created_at %></td> <!-- href-->
-        <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= format_datetime book.created_at %></td> <!-- href-->
         <td><% if book.image.attached? %>
           <%=  image_tag book.image %>
         <% end %>
         </td>
+
+        <td><%= link_to 'Edit', edit_book_path(book) %></td>
+        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
       </tr>
     <% end %>
   </tbody>

@@ -28,7 +28,8 @@
 
   <div class="field">
     <%= form.label :book_id %>
-    <%= form.text_field :book_id %>
+    <!-- 登録内容をすべて取得する(   :value :key) -->
+    <%= form.collection_select(:book_id, Book.all, :id, :title) %>
   </div>
 
   <div class="actions">
