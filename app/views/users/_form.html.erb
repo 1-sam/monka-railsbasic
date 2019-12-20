@@ -24,13 +24,7 @@
   <div class="field">
     <%= form.file_field :photo %>
   </div>
-
-  <strong>Photo:</strong>
-    <% if @user.photo.attached? %>
-      <%=  image_tag @book.photo %>
-    <% end %>
-  </p>
-
+  
   <div class="actions">
     <%= form.submit %>
   </div>
