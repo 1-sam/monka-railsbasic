@@ -7,5 +7,6 @@ class User < ApplicationRecord
  def thumbnail
     photo.variant(resize: '100x100')
  end
+
 end
 

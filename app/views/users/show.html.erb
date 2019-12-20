@@ -12,7 +12,6 @@
 <p>
 <strong>Photo:</strong>
 <% if @user.photo.attached? %>
-<%=  image_tag @user.photo %>
 <%=  image_tag @user.thumbnail %>
 <% end %>
 </p>
